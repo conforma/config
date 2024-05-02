@@ -4,6 +4,8 @@
     {{- with coll.Dict "directory" $key "data" $data }}
       {{- if eq .data.environment "konflux" }}
         {{- template "konflux" . }}
+      {{- else if eq .data.environment "rhtap" }}
+        {{- template "rhtap" . }}
       {{- else if eq .data.environment "konflux-tasks" }}
         {{- template "konflux-tasks" . }}
       {{- else }}

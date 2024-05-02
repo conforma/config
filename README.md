@@ -70,6 +70,28 @@ Rules specifically related to levels 1, 2 & 3 of SLSA v0.1, plus a set of basic 
   * Path in repository: [`pipelines/enterprise-contract-slsa3.yaml`](https://github.com/redhat-appstudio/build-definitions/blob/main/pipelines/enterprise-contract-slsa3.yaml)
 
 
+## Red Hat Trusted Application Pipeline (RHTAP)
+
+This configuration is designed to be used with RHTAP. The sample RHTAP
+pipelines include [a GitOps PR pipeline with an EC
+check](https://github.com/redhat-appstudio/tssc-sample-pipelines/blob/main/pac/pipelines/gitops-pull-request-rhtap.yaml).
+The pipeline uses the [`verify-enterprise-contract` task](https://github.com/redhat-appstudio/tssc-sample-pipelines/blob/main/pac/tasks/verify-enterprise-contract.yaml),
+with this EC configuration.
+
+It's similar to the Konflux CI default configuration but for compatibility and
+stability reasons it doesn't use policies directly from `main` branch.
+
+The policy configuration files are:
+
+### TSSC Default Stable
+
+Includes rules for levels 1, 2 & 3 of SLSA v0.1. This is the default config used by the RHTAP's TSSC templates.
+
+* URL for Enterprise Contract: `github.com/enterprise-contract/config//tssc-default`
+* Source: [tssc-default/policy.yaml](https://github.com/enterprise-contract/config/blob/main/tssc-default/policy.yaml)
+* Collections: [@slsa3](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa3)
+
+
 ## Konflux CI & Red Hat Trusted Application Pipeline (RHTAP) - Tasks
 
 These are policy rules used to verify Tekton Task definitions meet the Red Hat guidelines for being

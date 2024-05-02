@@ -1,0 +1,22 @@
+#
+# To use this policy with the ec command line:
+#   ec validate image \
+#     --image $IMAGE \
+#     --public-key key.pub \
+#     --policy github.com/enterprise-contract/config//tssc-default
+#
+name: TSSC Default Stable
+description: >-
+  Includes rules for levels 1, 2 & 3 of SLSA v0.1. This is the default config used by the RHTAP's TSSC templates.
+
+sources:
+  - name: Default
+    policy:
+      - github.com/enterprise-contract/ec-policies//policy/lib?ref=tssc-stable
+      - github.com/enterprise-contract/ec-policies//policy/release?ref=tssc-stable
+    data: []
+    config:
+      include:
+        - '@slsa3'
+      exclude:
+        []

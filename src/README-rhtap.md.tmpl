@@ -1,0 +1,14 @@
+{{ with .data }}
+### {{ .name }}
+
+{{ .description }}
+
+* URL for Enterprise Contract: `github.com/enterprise-contract/config//{{ $.directory }}`
+* Source: [{{ $.directory }}/policy.yaml](https://github.com/enterprise-contract/config/blob/main/{{ $.directory }}/policy.yaml)
+* Collections:{{ $comma := false }}{{ range .include -}}
+  {{- if strings.HasPrefix "@" . -}}
+    {{- if not $comma }}{{ $comma = true }} {{ else }}, {{ end -}}
+    [{{ . }}](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#{{ strings.TrimPrefix "@" . }})
+  {{- end -}}
+{{- end }}
+{{- end }}

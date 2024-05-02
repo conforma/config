@@ -6,6 +6,14 @@
     "include": ["@slsa3"],
     "exclude": []
   },
+  "tssc-default": {
+    "name": "TSSC Default Stable",
+    "description": "Includes rules for levels 1, 2 & 3 of SLSA v0.1. This is the default config used by the RHTAP's TSSC templates.",
+    "environment": "rhtap",
+    "ecPoliciesRef": "tssc-stable",
+    "include": ["@slsa3"],
+    "exclude": []
+  },
   "minimal": {
     "name": "Minimal (deprecated)",
     "description": "Includes a set of basic checks that are expected to pass for all Konflux builds.",
