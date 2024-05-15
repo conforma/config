@@ -87,3 +87,4 @@ Rules for container images built via GitHub Workflows.
 
 * [Policy Rule Documentation](https://enterprisecontract.dev/docs/ec-policies/release_policy.html)
 * [Getting Started with Enterprise Contract &amp; Konflux CI](https://enterprisecontract.dev/docs/user-guide/main/getting-started.html)
+YOLO
