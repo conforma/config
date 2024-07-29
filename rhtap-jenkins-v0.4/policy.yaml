@@ -3,11 +3,11 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//default-v0.4
+#     --policy github.com/enterprise-contract/config//rhtap-jenkins-v0.4
 #
-name: Default (v0.4)
+name: RHTAP Jenkins (v0.4)
 description: >-
-  Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4.
+  Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4 and images built with the RHTAP Jenkins pipeline.
 
 sources:
   - name: Default
@@ -18,4 +18,5 @@ sources:
     config:
       include:
         - '@slsa3'
-      exclude: []
+      exclude:
+        - slsa_source_correlated

@@ -80,10 +80,18 @@ Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.2.
 
 ### Default (v0.4)
 
-Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4
+Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4.
 
 * URL for Enterprise Contract: `github.com/enterprise-contract/config//default-v0.4`
 * Source: [default-v0.4/policy.yaml](https://github.com/enterprise-contract/config/blob/main/default-v0.4/policy.yaml)
+* Collections: [@slsa3](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa3)
+
+### RHTAP Jenkins (v0.4)
+
+Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4 and images built with the RHTAP Jenkins pipeline.
+
+* URL for Enterprise Contract: `github.com/enterprise-contract/config//rhtap-jenkins-v0.4`
+* Source: [rhtap-jenkins-v0.4/policy.yaml](https://github.com/enterprise-contract/config/blob/main/rhtap-jenkins-v0.4/policy.yaml)
 * Collections: [@slsa3](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa3)
 
 

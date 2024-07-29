@@ -30,13 +30,25 @@
   },
   "default-v0.4": {
     "name": "Default (v0.4)",
-    "description": "Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4",
+    "description": "Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4.",
     "environment": "versioned",
     "ecPoliciesRef": "release-v0.4",
     "include": [
       "@slsa3"
     ],
     "exclude": []
+  },
+  "rhtap-jenkins-v0.4": {
+    "name": "RHTAP Jenkins (v0.4)",
+    "description": "Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4 and images built with the RHTAP Jenkins pipeline.",
+    "environment": "versioned",
+    "ecPoliciesRef": "release-v0.4",
+    "include": [
+      "@slsa3"
+    ],
+    "exclude": [
+      "slsa_source_correlated"
+    ]
   },
   "minimal": {
     "name": "Minimal (deprecated)",
