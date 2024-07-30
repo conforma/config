@@ -2,7 +2,7 @@
 _default: all
 
 
-DATA_JSON=src/data.json
+DATA_YAML=src/data.yaml
 
 POLICY_TEMPLATE=src/policy.yaml.tmpl
 POLICY_KONFLUX_TEMPLATE=src/policy-konflux.yaml.tmpl
@@ -14,16 +14,17 @@ ifndef GOMPLATE
 	GOMPLATE=gomplate
 endif
 
-%/policy.yaml: $(POLICY_TEMPLATE) $(DATA_JSON) $(POLICY_KONFLUX_TEMPLATE) $(POLICY_KONFLUX_TASKS_TEMPLATE) $(POLICY_VERSIONED_TEMPLATE) $(POLICY_GITHUB_TEMPLATE) Makefile
+%/policy.yaml: $(POLICY_TEMPLATE) $(DATA_YAML) $(POLICY_KONFLUX_TEMPLATE) $(POLICY_KONFLUX_TASKS_TEMPLATE) $(POLICY_VERSIONED_TEMPLATE) $(POLICY_GITHUB_TEMPLATE) Makefile
+	@echo $@
 	@mkdir -p $(*)
-	@env NAME=$(*) $(GOMPLATE) -d data=$(DATA_JSON) --file $< \
+	@env NAME=$(*) $(GOMPLATE) -d data=$(DATA_YAML) --file $< \
 		-t konflux=$(POLICY_KONFLUX_TEMPLATE) \
 		-t konflux-tasks=$(POLICY_KONFLUX_TASKS_TEMPLATE) \
 		-t versioned=$(POLICY_VERSIONED_TEMPLATE) \
 		-t github=$(POLICY_GITHUB_TEMPLATE) \
 		-o $@
 
-POLICY_FILES=$(shell jq -r '"\(keys | .[])/policy.yaml"' src/data.json)
+POLICY_FILES=$(shell yq '. | keys | .[] + "/policy.yaml"' src/data.yaml)
 
 README_TEMPLATE=src/README.md.tmpl
 README_KONFLUX_TEMPLATE=src/README-konflux.md.tmpl
@@ -32,8 +33,9 @@ README_VERSIONED_TEMPLATE=src/README-versioned.md.tmpl
 README_GITHUB_TEMPLATE=src/README-github.md.tmpl
 README_FILE=README.md
 
-$(README_FILE): $(README_TEMPLATE) $(DATA_JSON) $(README_KONFLUX_TEMPLATE) $(README_KONFLUX_TASKS_TEMPLATE) $(README_VERSIONED_TEMPLATE) $(README_GITHUB_TEMPLATE) Makefile
-	@$(GOMPLATE) -d data=$(DATA_JSON) --file $< \
+$(README_FILE): $(README_TEMPLATE) $(DATA_YAML) $(README_KONFLUX_TEMPLATE) $(README_KONFLUX_TASKS_TEMPLATE) $(README_VERSIONED_TEMPLATE) $(README_GITHUB_TEMPLATE) Makefile
+	@echo $@
+	@$(GOMPLATE) -d data=$(DATA_YAML) --file $< \
 		-t konflux=$(README_KONFLUX_TEMPLATE) \
 		-t konflux-tasks=$(README_KONFLUX_TASKS_TEMPLATE) \
 		-t versioned=$(README_VERSIONED_TEMPLATE) \
