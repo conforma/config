@@ -69,9 +69,9 @@ function get_policy_configs() {
     environment="$1"
 
     configs="$(
-        < src/data.json \
+        < src/data.yaml \
         environment="${environment}" \
-        jq -r 'to_entries | .[] | select(.value.environment == env.environment) | select(.value.deprecated | not) | "\(.key)/policy.yaml"' \
+        yq 'to_entries | .[] | select(.value.environment == env(environment)) | select(.value.deprecated != true) | "\(.key)/policy.yaml"' \
     | sort)"
 
     printf "${configs}"
