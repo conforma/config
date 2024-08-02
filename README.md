@@ -10,7 +10,7 @@ When using Red Hat's [Konflux CI](https://github.com/konflux-ci/), (formerly
 [Red Hat App Studio](https://github.com/redhat-appstudio/)),
 environment, there is a predefined Integration Test pipeline definition for each of the configs in
 this section. They can be used when creating an Integration Test in Konflux as per the [documentation
-here](https://redhat-appstudio.github.io/docs.appstudio.io/Documentation/main/how-to-guides/proc_managing-compliance-with-the-enterprise-contract/).
+here](https://konflux-ci.dev/docs/advanced-how-tos/managing-compliance-with-ec/).
 
 The policy configuration files are:
 
