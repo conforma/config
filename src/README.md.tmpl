@@ -6,8 +6,7 @@ environments.
 
 ## Konflux CI
 
-When using Red Hat's [Konflux CI](https://github.com/konflux-ci/), (formerly
-[Red Hat App Studio](https://github.com/redhat-appstudio/)),
+When using Red Hat's [Konflux CI](https://github.com/konflux-ci/)
 environment, there is a predefined Integration Test pipeline definition for each of the configs in
 this section. They can be used when creating an Integration Test in Konflux as per the [documentation
 here](https://konflux-ci.dev/docs/advanced-how-tos/managing-compliance-with-ec/).
