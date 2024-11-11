@@ -1,0 +1,21 @@
+#
+# To use this policy with the ec command line:
+#   ec validate image \
+#     --image $IMAGE \
+#     --public-key key.pub \
+#     --policy github.com/enterprise-contract/config//rhtap-github
+#
+name: RHTAP GitHub
+description: >-
+  Includes rules suitable for use with the attestations created by RHTAP GitHub build pipelines.
+
+sources:
+  - name: Default
+    policy:
+      - github.com/enterprise-contract/ec-policies//policy/lib?ref=main
+      - github.com/enterprise-contract/ec-policies//policy/release?ref=main
+    data: []
+    config:
+      include:
+        - '@rhtap-github'
+      exclude: []

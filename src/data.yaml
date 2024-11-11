@@ -9,8 +9,8 @@ default:
     - '@slsa3'
   exclude: []
 
-# In future we might want to maintain multiple versioned configs for
-# rhtap-jenkins also, but for now there is just one of them
+# In future we might want to maintain multiple versioned configs
+# for rhtap, but for now there is just one of them per ci-type
 rhtap-jenkins:
   name: RHTAP Jenkins
   description: >-
@@ -20,6 +20,30 @@ rhtap-jenkins:
   ecPoliciesRef: release-v0.5
   include:
     - '@rhtap-jenkins'
+  exclude: []
+
+rhtap-gitlab:
+  name: RHTAP GitLab
+  description: >-
+    Includes rules suitable for use with the attestations created by RHTAP
+    GitLab build pipelines.
+  environment: versioned
+  # Pin to a release branch in future
+  ecPoliciesRef: main
+  include:
+    - '@rhtap-gitlab'
+  exclude: []
+
+rhtap-github:
+  name: RHTAP GitHub
+  description: >-
+    Includes rules suitable for use with the attestations created by RHTAP
+    GitHub build pipelines.
+  environment: versioned
+  # Pin to a release branch in future
+  ecPoliciesRef: main
+  include:
+    - '@rhtap-github'
   exclude: []
 
 default-v0.1-alpha:
