@@ -85,6 +85,22 @@ Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4
 * Source: [default-v0.4/policy.yaml](https://github.com/enterprise-contract/config/blob/main/default-v0.4/policy.yaml)
 * Collections: [@slsa3](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa3)
 
+### RHTAP GitHub
+
+Includes rules suitable for use with the attestations created by RHTAP GitHub build pipelines.
+
+* URL for Enterprise Contract: `github.com/enterprise-contract/config//rhtap-github`
+* Source: [rhtap-github/policy.yaml](https://github.com/enterprise-contract/config/blob/main/rhtap-github/policy.yaml)
+* Collections: [@rhtap-github](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#rhtap-github)
+
+### RHTAP GitLab
+
+Includes rules suitable for use with the attestations created by RHTAP GitLab build pipelines.
+
+* URL for Enterprise Contract: `github.com/enterprise-contract/config//rhtap-gitlab`
+* Source: [rhtap-gitlab/policy.yaml](https://github.com/enterprise-contract/config/blob/main/rhtap-gitlab/policy.yaml)
+* Collections: [@rhtap-gitlab](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#rhtap-gitlab)
+
 ### RHTAP Jenkins
 
 Includes rules suitable for use with the attestations created by RHTAP Jenkins build pipelines.
