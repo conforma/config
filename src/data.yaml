@@ -28,8 +28,7 @@ rhtap-gitlab:
     Includes rules suitable for use with the attestations created by RHTAP
     GitLab build pipelines.
   environment: versioned
-  # Pin to a release branch in future
-  ecPoliciesRef: main
+  ecPoliciesRef: release-v0.5-rhtap
   include:
     - '@rhtap-gitlab'
   exclude: []
@@ -40,8 +39,7 @@ rhtap-github:
     Includes rules suitable for use with the attestations created by RHTAP
     GitHub build pipelines.
   environment: versioned
-  # Pin to a release branch in future
-  ecPoliciesRef: main
+  ecPoliciesRef: release-v0.5-rhtap
   include:
     - '@rhtap-github'
   exclude: []
