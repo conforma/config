@@ -77,9 +77,6 @@ function get_policy_configs() {
     printf "${configs}"
 }
 
-release_policy_url="$(get_policy_url "ec-release-policy")"
-echo "Release policy URL: ${release_policy_url}"
-
 task_policy_url="$(get_policy_url "ec-task-policy")"
 echo "Task policy URL: ${task_policy_url}"
 
@@ -89,34 +86,6 @@ echo '#
 # github.com/enterprise-contract/config repo. Any manual modifications will be overridden.
 #
 ' > "${OUTPUT}"
-
-if [[ ! -z $release_policy_url ]]; then
-    # Figure out which release policy config files to use.
-    policy_configs="$(get_policy_configs "konflux")"
-
-    for policy_config in $policy_configs; do
-        name="$(dirname $policy_config)"
-        # For legacy reasons, the everything config is called "all" in Konflux
-        if [[ "${name}" == 'everything' ]]; then
-            name='all'
-        fi
-
-        echo "---" >> "${OUTPUT}"
-        name="${name}" policy="${release_policy_url}" \
-        yq -P -o yaml '{
-            "apiVersion": "appstudio.redhat.com/v1alpha1",
-            "kind": "EnterpriseContractPolicy",
-            "metadata": {
-                "name": strenv(name),
-                "namespace": "enterprise-contract-service"
-            },
-            "spec": . }
-            | .spec.sources[].policy = [strenv(policy)]
-            | .spec.publicKey = "k8s://openshift-pipelines/public-key"
-            | sort_keys(..) ' \
-            "${policy_config}"  >> "${OUTPUT}"
-    done
-fi
 
 if [[ ! -z $task_policy_url ]]; then
     # Figure out which task policy config files to use.
