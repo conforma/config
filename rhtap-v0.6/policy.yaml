@@ -1,0 +1,21 @@
+#
+# To use this policy with the ec command line:
+#   ec validate image \
+#     --image $IMAGE \
+#     --public-key key.pub \
+#     --policy github.com/enterprise-contract/config//rhtap-v0.6
+#
+name: RHTAP
+description: >-
+  Includes rules suitable for use with the attestations created by RHTAP.
+
+sources:
+  - name: Default
+    policy:
+      - github.com/enterprise-contract/ec-policies//policy/lib?ref=release-v0.6
+      - github.com/enterprise-contract/ec-policies//policy/release?ref=release-v0.6
+    data: []
+    config:
+      include:
+        - '@rhtap-multi-ci'
+      exclude: []
