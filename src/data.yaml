@@ -9,8 +9,19 @@ default:
     - '@slsa3'
   exclude: []
 
-# In future we might want to maintain multiple versioned configs
-# for rhtap, but for now there is just one of them per ci-type
+# Compatible with all the different RHTAP CI environments.
+# For use with Red Hat builds of EC v0.6.
+rhtap-v0.6:
+  name: RHTAP
+  description: >-
+    Includes rules suitable for use with the attestations created by RHTAP.
+  environment: versioned
+  ecPoliciesRef: release-v0.6
+  include:
+    - '@rhtap-multi-ci'
+  exclude: []
+
+# Deprecated. RHTAP should now be using "rhtap-v0.6" or newer.
 rhtap-jenkins:
   name: RHTAP Jenkins
   description: >-
@@ -21,7 +32,9 @@ rhtap-jenkins:
   include:
     - '@rhtap-jenkins'
   exclude: []
+  deprecated: true
 
+# Deprecated. RHTAP should now be using "rhtap-v0.6" or newer.
 rhtap-gitlab:
   name: RHTAP GitLab
   description: >-
@@ -32,7 +45,9 @@ rhtap-gitlab:
   include:
     - '@rhtap-gitlab'
   exclude: []
+  deprecated: true
 
+# Deprecated. RHTAP should now be using "rhtap-v0.6" or newer.
 rhtap-github:
   name: RHTAP GitHub
   description: >-
@@ -43,6 +58,7 @@ rhtap-github:
   include:
     - '@rhtap-github'
   exclude: []
+  deprecated: true
 
 default-v0.1-alpha:
   name: Default (v0.1-alpha)

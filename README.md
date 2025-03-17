@@ -85,29 +85,13 @@ Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4
 * Source: [default-v0.4/policy.yaml](https://github.com/enterprise-contract/config/blob/main/default-v0.4/policy.yaml)
 * Collections: [@slsa3](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa3)
 
-### RHTAP GitHub
+### RHTAP
 
-Includes rules suitable for use with the attestations created by RHTAP GitHub build pipelines.
+Includes rules suitable for use with the attestations created by RHTAP.
 
-* URL for Enterprise Contract: `github.com/enterprise-contract/config//rhtap-github`
-* Source: [rhtap-github/policy.yaml](https://github.com/enterprise-contract/config/blob/main/rhtap-github/policy.yaml)
-* Collections: [@rhtap-github](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#rhtap-github)
-
-### RHTAP GitLab
-
-Includes rules suitable for use with the attestations created by RHTAP GitLab build pipelines.
-
-* URL for Enterprise Contract: `github.com/enterprise-contract/config//rhtap-gitlab`
-* Source: [rhtap-gitlab/policy.yaml](https://github.com/enterprise-contract/config/blob/main/rhtap-gitlab/policy.yaml)
-* Collections: [@rhtap-gitlab](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#rhtap-gitlab)
-
-### RHTAP Jenkins
-
-Includes rules suitable for use with the attestations created by RHTAP Jenkins build pipelines.
-
-* URL for Enterprise Contract: `github.com/enterprise-contract/config//rhtap-jenkins`
-* Source: [rhtap-jenkins/policy.yaml](https://github.com/enterprise-contract/config/blob/main/rhtap-jenkins/policy.yaml)
-* Collections: [@rhtap-jenkins](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#rhtap-jenkins)
+* URL for Enterprise Contract: `github.com/enterprise-contract/config//rhtap-v0.6`
+* Source: [rhtap-v0.6/policy.yaml](https://github.com/enterprise-contract/config/blob/main/rhtap-v0.6/policy.yaml)
+* Collections: [@rhtap-multi-ci](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#rhtap-multi-ci)
 
 
 ## Konflux CI & Red Hat Trusted Application Pipeline (RHTAP) - Tasks
