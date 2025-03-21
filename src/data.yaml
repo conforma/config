@@ -93,6 +93,17 @@ default-v0.4:
     - '@slsa3'
   exclude: []
 
+tekton-slsa3-v0.6:
+  name: Tekton SLSA3 (v0.6)
+  description: >-
+    Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with
+    ec version v0.6
+  environment: versioned
+  ecPoliciesRef: release-v0.6
+  include:
+    - '@slsa3'
+  exclude: []
+
 minimal:
   name: Minimal (deprecated)
   description: >-

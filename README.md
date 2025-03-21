@@ -93,6 +93,14 @@ Includes rules suitable for use with the attestations created by RHTAP.
 * Source: [rhtap-v0.6/policy.yaml](https://github.com/enterprise-contract/config/blob/main/rhtap-v0.6/policy.yaml)
 * Collections: [@rhtap-multi-ci](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#rhtap-multi-ci)
 
+### Tekton SLSA3 (v0.6)
+
+Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.6
+
+* URL for Enterprise Contract: `github.com/enterprise-contract/config//tekton-slsa3-v0.6`
+* Source: [tekton-slsa3-v0.6/policy.yaml](https://github.com/enterprise-contract/config/blob/main/tekton-slsa3-v0.6/policy.yaml)
+* Collections: [@slsa3](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa3)
+
 
 ## Konflux CI & Red Hat Trusted Application Pipeline (RHTAP) - Tasks
 
