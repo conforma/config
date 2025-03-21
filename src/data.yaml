@@ -70,6 +70,7 @@ default-v0.1-alpha:
   include:
     - '@slsa3'
   exclude: []
+  deprecated: true
 
 default-v0.2:
   name: Default (v0.2)
@@ -81,6 +82,7 @@ default-v0.2:
   include:
     - '@slsa3'
   exclude: []
+  deprecated: true
 
 default-v0.4:
   name: Default (v0.4)

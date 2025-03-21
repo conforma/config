@@ -61,22 +61,6 @@ suggested for use in [Red Hat Trusted Application Pipeline](https://developers.r
 
 The policy configuration files are:
 
-### Default (v0.1-alpha)
-
-Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.1-alpha.
-
-* URL for Enterprise Contract: `github.com/enterprise-contract/config//default-v0.1-alpha`
-* Source: [default-v0.1-alpha/policy.yaml](https://github.com/enterprise-contract/config/blob/main/default-v0.1-alpha/policy.yaml)
-* Collections: [@slsa3](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa3)
-
-### Default (v0.2)
-
-Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.2.
-
-* URL for Enterprise Contract: `github.com/enterprise-contract/config//default-v0.2`
-* Source: [default-v0.2/policy.yaml](https://github.com/enterprise-contract/config/blob/main/default-v0.2/policy.yaml)
-* Collections: [@slsa3](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#slsa3)
-
 ### Default (v0.4)
 
 Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4
