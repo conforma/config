@@ -104,7 +104,11 @@ tekton-slsa3-v0.6:
   ecPoliciesRef: release-v0.6
   include:
     - '@slsa3'
-  exclude: []
+  exclude:
+    # https://issues.redhat.com/browse/RHTAP-4809
+    # RHTAP doesn't have a mechanism for providing the expected git URL and commit ID. (Konflux
+    # does this by leveraging Snapshots.)
+    - slsa_source_correlated
 
 minimal:
   name: Minimal (deprecated)

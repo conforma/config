@@ -18,4 +18,5 @@ sources:
     config:
       include:
         - '@slsa3'
-      exclude: []
+      exclude:
+        - slsa_source_correlated
