@@ -144,6 +144,15 @@ redhat-no-hermetic:
     - hermetic_build_task
     - tasks.required_tasks_found:prefetch-dependencies
 
+redhat-rpms:
+  name: Red Hat RPMs
+  description: >-
+    For Red Hat RPM builds in Red Hat Konflux.
+  environment: konflux
+  include:
+    - '@redhat_rpms'
+  exclude: []
+
 slsa3:
   name: SLSA3
   description: >-

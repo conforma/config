@@ -37,6 +37,14 @@ Includes most of the rules and policies required internally by Red Hat when buil
 * Source: [redhat-no-hermetic/policy.yaml](https://github.com/enterprise-contract/config/blob/main/redhat-no-hermetic/policy.yaml)
 * Collections: [@redhat](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#redhat)
 
+### Red Hat RPMs
+
+For Red Hat RPM builds in Red Hat Konflux.
+
+* URL for Enterprise Contract: `github.com/enterprise-contract/config//redhat-rpms`
+* Source: [redhat-rpms/policy.yaml](https://github.com/enterprise-contract/config/blob/main/redhat-rpms/policy.yaml)
+* Collections: [@redhat_rpms](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#redhat_rpms)
+
 ### SLSA3
 
 Rules specifically related to levels 1, 2 & 3 of SLSA v0.1, plus a set of basic checks that are expected to pass for all Konflux builds.
