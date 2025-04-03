@@ -1,0 +1,40 @@
+#
+# To use this policy with the ec command line:
+#   ec validate image \
+#     --image $IMAGE \
+#     --public-key key.pub \
+#     --policy github.com/enterprise-contract/config//redhat-rpms
+#
+# To use with an Konflux Enterprise Contract Integration Test CR:
+#   ...
+#   spec:
+#     params:
+#     - name: POLICY_CONFIGURATION
+#       value: github.com/enterprise-contract/config//redhat-rpms
+#     ...
+#
+# In Konflux there is also an EnterpriseContractPolicy CRD containing this policy.
+# You can use it by specifying `enterprise-contract-service/redhat-rpms` as
+# the param value instead of the GitHub URL.
+#
+# See also:
+# - https://enterprisecontract.dev/docs/ec-policies/release_policy.html#_available_rule_collections
+# - https://enterprisecontract.dev/docs/ec-cli/main/configuration.html
+#
+name: Red Hat RPMs
+description: >-
+  For Red Hat RPM builds in Red Hat Konflux.
+  Source: https://github.com/enterprise-contract/config/blob/main/redhat-rpms/policy.yaml
+
+sources:
+  - name: Default
+    policy:
+      - github.com/enterprise-contract/ec-policies//policy/lib
+      - github.com/enterprise-contract/ec-policies//policy/release
+    data:
+      - oci::quay.io/konflux-ci/tekton-catalog/data-acceptable-bundles:latest
+      - github.com/release-engineering/rhtap-ec-policy//data
+    config:
+      include:
+        - '@redhat_rpms'
+      exclude: []
