@@ -39,6 +39,9 @@ sources:
     data:
       - oci::quay.io/konflux-ci/tekton-catalog/data-acceptable-bundles:latest
       - github.com/release-engineering/rhtap-ec-policy//data
+      {{- range index . "extra-data" }}
+      - {{ . }}
+      {{- end }}
     config:
       include:
         {{ .include | toYAML | strings.Indent 8 | strings.TrimSpace }}
