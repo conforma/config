@@ -152,6 +152,8 @@ redhat-rpms:
   include:
     - '@redhat_rpms'
   exclude: []
+  extra-data:
+    - oci::quay.io/enterprise-contract/rpmbuild-data-acceptable-bundles:latest
 
 slsa3:
   name: SLSA3
