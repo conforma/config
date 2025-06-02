@@ -19,7 +19,7 @@
 #
 # See also:
 # - https://conforma.dev/docs/policy/release_policy.html#_available_rule_collections
-# - https://conforma.dev/docs/ec-cli/main/configuration.html
+# - https://conforma.dev/docs/ecc/
 #
 name: Red Hat
 description: >-
