@@ -3,14 +3,14 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//default
+#     --policy github.com/conforma/config//default
 #
 # To use with an Konflux Enterprise Contract Integration Test CR:
 #   ...
 #   spec:
 #     params:
 #     - name: POLICY_CONFIGURATION
-#       value: github.com/enterprise-contract/config//default
+#       value: github.com/conforma/config//default
 #     ...
 #
 # In Konflux there is also an EnterpriseContractPolicy CRD containing this policy.
@@ -24,7 +24,7 @@
 name: Default
 description: >-
   Includes rules for levels 1, 2 & 3 of SLSA v0.1. This is the default config used for new Konflux applications.
-  Source: https://github.com/enterprise-contract/config/blob/main/default/policy.yaml
+  Source: https://github.com/conforma/config/blob/main/default/policy.yaml
 
 sources:
   - name: Default

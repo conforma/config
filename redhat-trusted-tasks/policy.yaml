@@ -1,7 +1,7 @@
 # To use this policy with the ec command line:
 #   ec validate input \
 #     --file $FILE \
-#     --policy github.com/enterprise-contract/config//redhat-trusted-tasks
+#     --policy github.com/conforma/config//redhat-trusted-tasks
 #
 name: Red Hat Trusted Tasks
 description: >-

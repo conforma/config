@@ -5,14 +5,14 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//everything
+#     --policy github.com/conforma/config//everything
 #
 # To use with an Konflux Enterprise Contract Integration Test CR:
 #   ...
 #   spec:
 #     params:
 #     - name: POLICY_CONFIGURATION
-#       value: github.com/enterprise-contract/config//everything
+#       value: github.com/conforma/config//everything
 #     ...
 #
 # In Konflux there is also an EnterpriseContractPolicy CRD containing this policy.
@@ -26,7 +26,7 @@
 name: Everything (experimental)
 description: >-
   Include every rule in the default policy source. For experiments only. This is not expected to pass for Konflux builds without excluding some rules.
-  Source: https://github.com/enterprise-contract/config/blob/main/everything/policy.yaml
+  Source: https://github.com/conforma/config/blob/main/everything/policy.yaml
 
 sources:
   - name: Default
