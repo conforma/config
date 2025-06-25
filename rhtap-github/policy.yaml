@@ -5,7 +5,7 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//rhtap-github
+#     --policy github.com/conforma/config//rhtap-github
 #
 name: RHTAP GitHub
 description: >-

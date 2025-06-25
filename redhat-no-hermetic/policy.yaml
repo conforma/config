@@ -3,14 +3,14 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//redhat-no-hermetic
+#     --policy github.com/conforma/config//redhat-no-hermetic
 #
 # To use with an Konflux Enterprise Contract Integration Test CR:
 #   ...
 #   spec:
 #     params:
 #     - name: POLICY_CONFIGURATION
-#       value: github.com/enterprise-contract/config//redhat-no-hermetic
+#       value: github.com/conforma/config//redhat-no-hermetic
 #     ...
 #
 # In Konflux there is also an EnterpriseContractPolicy CRD containing this policy.
@@ -24,7 +24,7 @@
 name: Red Hat (non hermetic)
 description: >-
   Includes most of the rules and policies required internally by Red Hat when building Red Hat products. It excludes the requirement of hermetic builds.
-  Source: https://github.com/enterprise-contract/config/blob/main/redhat-no-hermetic/policy.yaml
+  Source: https://github.com/conforma/config/blob/main/redhat-no-hermetic/policy.yaml
 
 sources:
   - name: Default

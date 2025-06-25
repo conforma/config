@@ -8,14 +8,14 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//{{ $.directory }}
+#     --policy github.com/conforma/config//{{ $.directory }}
 #
 # To use with an Konflux Enterprise Contract Integration Test CR:
 #   ...
 #   spec:
 #     params:
 #     - name: POLICY_CONFIGURATION
-#       value: github.com/enterprise-contract/config//{{ $.directory }}
+#       value: github.com/conforma/config//{{ $.directory }}
 #     ...
 #
 # In Konflux there is also an EnterpriseContractPolicy CRD containing this policy.
@@ -29,7 +29,7 @@
 name: {{.name}}
 description: >-
   {{ .description }}
-  Source: https://github.com/enterprise-contract/config/blob/main/{{ $.directory }}/policy.yaml
+  Source: https://github.com/conforma/config/blob/main/{{ $.directory }}/policy.yaml
 
 sources:
   - name: Default

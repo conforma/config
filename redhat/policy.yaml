@@ -3,14 +3,14 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//redhat
+#     --policy github.com/conforma/config//redhat
 #
 # To use with an Konflux Enterprise Contract Integration Test CR:
 #   ...
 #   spec:
 #     params:
 #     - name: POLICY_CONFIGURATION
-#       value: github.com/enterprise-contract/config//redhat
+#       value: github.com/conforma/config//redhat
 #     ...
 #
 # In Konflux there is also an EnterpriseContractPolicy CRD containing this policy.
@@ -24,7 +24,7 @@
 name: Red Hat
 description: >-
   Includes the full set of rules and policies required internally by Red Hat when building Red Hat products.
-  Source: https://github.com/enterprise-contract/config/blob/main/redhat/policy.yaml
+  Source: https://github.com/conforma/config/blob/main/redhat/policy.yaml
 
 sources:
   - name: Default

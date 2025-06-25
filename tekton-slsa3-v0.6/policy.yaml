@@ -3,7 +3,7 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//tekton-slsa3-v0.6
+#     --policy github.com/conforma/config//tekton-slsa3-v0.6
 #
 name: Tekton SLSA3 (v0.6)
 description: >-

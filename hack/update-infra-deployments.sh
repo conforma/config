@@ -86,7 +86,7 @@ echo "Task policy URL: ${task_policy_url}"
 # Always generate the output file from scratch and add some helper text on the generated file.
 echo '#
 # The contents of this file are automatically generated based on the Konflux configs defined in the
-# github.com/enterprise-contract/config repo. Any manual modifications will be overridden.
+# github.com/conforma/config repo. Any manual modifications will be overridden.
 #
 ' > "${OUTPUT}"
 

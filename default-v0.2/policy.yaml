@@ -5,7 +5,7 @@
 #   ec validate image \
 #     --image $IMAGE \
 #     --public-key key.pub \
-#     --policy github.com/enterprise-contract/config//default-v0.2
+#     --policy github.com/conforma/config//default-v0.2
 #
 name: Default (v0.2)
 description: >-
