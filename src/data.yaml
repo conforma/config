@@ -98,6 +98,7 @@ default-v0.2:
   exclude: []
   deprecated: true
 
+# Deprecated just because it's pretty old now
 default-v0.4:
   name: Default (v0.4)
   description: >-
@@ -108,6 +109,7 @@ default-v0.4:
   include:
     - '@slsa3'
   exclude: []
+  deprecated: true
 
 tekton-slsa3-v0.7:
   name: Tekton SLSA3 (v0.7)
