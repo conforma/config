@@ -77,12 +77,20 @@ Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.4
 * Source: [default-v0.4/policy.yaml](https://github.com/conforma/config/blob/main/default-v0.4/policy.yaml)
 * Collections: [@slsa3](https://conforma.dev/docs/policy/release_policy.html#slsa3)
 
-### RHTAP
+### RHTAP (v0.6)
 
-Includes rules suitable for use with the attestations created by RHTAP.
+Includes rules suitable for use with the attestations created by RHTAP. For use with ec version v0.6.
 
 * URL for Enterprise Contract: `github.com/conforma/config//rhtap-v0.6`
 * Source: [rhtap-v0.6/policy.yaml](https://github.com/conforma/config/blob/main/rhtap-v0.6/policy.yaml)
+* Collections: [@rhtap-multi-ci](https://conforma.dev/docs/policy/release_policy.html#rhtap-multi-ci)
+
+### RHTAP (v0.7)
+
+Includes rules suitable for use with the attestations created by RHTAP. For use with ec version v0.7.
+
+* URL for Enterprise Contract: `github.com/conforma/config//rhtap-v0.7`
+* Source: [rhtap-v0.7/policy.yaml](https://github.com/conforma/config/blob/main/rhtap-v0.7/policy.yaml)
 * Collections: [@rhtap-multi-ci](https://conforma.dev/docs/policy/release_policy.html#rhtap-multi-ci)
 
 ### Tekton SLSA3 (v0.6)
@@ -91,6 +99,14 @@ Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.6
 
 * URL for Enterprise Contract: `github.com/conforma/config//tekton-slsa3-v0.6`
 * Source: [tekton-slsa3-v0.6/policy.yaml](https://github.com/conforma/config/blob/main/tekton-slsa3-v0.6/policy.yaml)
+* Collections: [@slsa3](https://conforma.dev/docs/policy/release_policy.html#slsa3)
+
+### Tekton SLSA3 (v0.7)
+
+Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with ec version v0.7
+
+* URL for Enterprise Contract: `github.com/conforma/config//tekton-slsa3-v0.7`
+* Source: [tekton-slsa3-v0.7/policy.yaml](https://github.com/conforma/config/blob/main/tekton-slsa3-v0.7/policy.yaml)
 * Collections: [@slsa3](https://conforma.dev/docs/policy/release_policy.html#slsa3)
 
 

@@ -5,9 +5,9 @@
 #     --public-key key.pub \
 #     --policy github.com/conforma/config//rhtap-v0.6
 #
-name: RHTAP
+name: RHTAP (v0.6)
 description: >-
-  Includes rules suitable for use with the attestations created by RHTAP.
+  Includes rules suitable for use with the attestations created by RHTAP. For use with ec version v0.6.
 
 sources:
   - name: Default
