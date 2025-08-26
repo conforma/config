@@ -9,12 +9,26 @@ default:
     - '@slsa3'
   exclude: []
 
-# Compatible with all the different RHTAP CI environments.
+# Compatible with all the different RHTAP Multi-CI environments.
+# For use with Red Hat builds of Conforma v0.7.
+rhtap-v0.7:
+  name: RHTAP (v0.7)
+  description: >-
+    Includes rules suitable for use with the attestations created by
+    RHTAP. For use with ec version v0.7.
+  environment: versioned
+  ecPoliciesRef: release-v0.7
+  include:
+    - '@rhtap-multi-ci'
+  exclude: []
+
+# Compatible with all the different RHTAP Multi-CI environments.
 # For use with Red Hat builds of EC v0.6.
 rhtap-v0.6:
-  name: RHTAP
+  name: RHTAP (v0.6)
   description: >-
-    Includes rules suitable for use with the attestations created by RHTAP.
+    Includes rules suitable for use with the attestations created by
+    RHTAP. For use with ec version v0.6.
   environment: versioned
   ecPoliciesRef: release-v0.6
   include:
@@ -84,6 +98,7 @@ default-v0.2:
   exclude: []
   deprecated: true
 
+# Deprecated just because it's pretty old now
 default-v0.4:
   name: Default (v0.4)
   description: >-
@@ -94,6 +109,22 @@ default-v0.4:
   include:
     - '@slsa3'
   exclude: []
+  deprecated: true
+
+tekton-slsa3-v0.7:
+  name: Tekton SLSA3 (v0.7)
+  description: >-
+    Includes rules for levels 1, 2 & 3 of SLSA v0.1. For use with
+    ec version v0.7
+  environment: versioned
+  ecPoliciesRef: release-v0.7
+  include:
+    - '@slsa3'
+  exclude:
+    # https://issues.redhat.com/browse/RHTAP-4809
+    # RHTAP doesn't have a mechanism for providing the expected git URL and commit ID. (Konflux
+    # does this by leveraging Snapshots.)
+    - slsa_source_correlated
 
 tekton-slsa3-v0.6:
   name: Tekton SLSA3 (v0.6)
