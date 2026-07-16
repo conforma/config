@@ -1,0 +1,71 @@
+#
+# Red Hat Integration Test Scenario (ITS) Policy
+#
+# This policy config gives teams early visibility into release-time policy
+# violations during Integration Tests, without waiting for the actual release
+# pipeline to surface them.
+#
+# It is based on the standard "redhat" policy config but with two key changes:
+#
+#   1. pipeline_intention is set to "release" — this unlocks the OLM rules
+#      (unpinned_snapshot_references, unpinned_related_images,
+#      inaccessible_related_images, unmapped_references) that are normally
+#      only evaluated during a release pipeline run.
+#
+#   2. The "schedule" and "quay_expiration" packages are excluded — these
+#      rules are release-only concerns that would always fail in an ITS
+#      context:
+#        - schedule (weekday_restriction, date_restriction): restricts
+#          which days releases can happen; irrelevant outside a release.
+#        - quay_expiration (expires_label): checks that released images
+#          don't have a Quay expiration label; ITS images are expected
+#          to have this label set.
+#
+#
+# Usage with the ec CLI:
+# Note: You can toggle the effective-time to test a build against violations that will become active in the future.
+#       This is helpful to test an upcoming release.
+#   ec validate image \
+#     --image $IMAGE \
+#     --public-key key.pub \
+#     --policy github.com/conforma/config//redhat-its \
+#     --effective-time 2026-11-18T00:00:00Z
+#
+# Usage with a Konflux Integration Test CR:
+#   spec:
+#     params:
+#     - name: POLICY_CONFIGURATION
+#       value: github.com/conforma/config//redhat-its
+#
+# See also:
+# - Base config: https://github.com/conforma/config/blob/main/redhat/policy.yaml
+# - Rule collections: https://conforma.dev/docs/policy/release_policy.html#_available_rule_collections
+# - Conforma CLI: https://conforma.dev/docs/ecc/
+#
+name: Red Hat - ITS
+description: >-
+  Simulates release-time Conforma policy evaluation during Integration Tests.
+  Based on the standard Red Hat policy with pipeline_intention set to "release"
+  to surface OLM rule violations early. Excludes the "schedule" and
+  "quay_expiration" packages since those rules are only meaningful during an
+  actual release.
+
+sources:
+  - name: Default
+    policy:
+      - github.com/conforma/policy//policy/lib
+      - github.com/conforma/policy//policy/release
+    data:
+      - github.com/release-engineering/rhtap-ec-policy//data
+    # Triggers evaluation of OLM rules that are gated behind pipeline_intention.
+    ruleData:
+      pipeline_intention: release
+    config:
+      include:
+        - '@redhat'
+      exclude:
+        # These packages are excluded because they enforce constraints that
+        # only apply during an actual release — running them in ITS would
+        # produce false failures.
+        - quay_expiration
+        - schedule
